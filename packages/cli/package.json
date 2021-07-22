@@ -2,7 +2,7 @@
   "name": "metatags",
   "description": "Ensure your HTML is previewed beauty across social networks.",
   "homepage": "https://github.com/microlinkhq/metatags#readme",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "main": "bin/cli/index.js",
   "bin": {
     "metatags": "bin/cli/index.js"
@@ -31,7 +31,7 @@
     "twitter"
   ],
   "dependencies": {
-    "@metatags/core": "0.0.0",
+    "@metatags/core": "^0.1.0",
     "beauty-error": "~1.2.8",
     "chalk": "~4.1.1",
     "ci-env": "~1.16.0",
