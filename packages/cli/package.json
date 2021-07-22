@@ -1,0 +1,55 @@
+{
+  "name": "metatags",
+  "description": "Ensure your HTML is previewed beauty across social networks.",
+  "homepage": "https://github.com/microlinkhq/metatags#readme",
+  "version": "0.0.0",
+  "main": "bin/cli/index.js",
+  "bin": {
+    "metatags": "bin/cli/index.js"
+  },
+  "repository": {
+    "directory": "packages/cli",
+    "type": "git",
+    "url": "git+https://github.com/microlinkhq/metatags.git"
+  },
+  "bugs": {
+    "url": "https://github.com/microlinkhq/metatags/issues"
+  },
+  "keywords": [
+    "cli",
+    "facebook",
+    "google",
+    "html",
+    "lint",
+    "meta",
+    "metatags",
+    "og-image",
+    "og:image",
+    "opengraph",
+    "seo",
+    "tags",
+    "twitter"
+  ],
+  "dependencies": {
+    "@metatags/core": "0.0.0",
+    "beauty-error": "~1.2.8",
+    "chalk": "~4.1.1",
+    "ci-env": "~1.16.0",
+    "cosmiconfig": "~7.0.0",
+    "github-build": "~1.2.2",
+    "humanize-url": "~2.1.1",
+    "indent-string": "~4.0.0",
+    "lodash": "~4.17.21",
+    "log-symbols": "~4.1.0",
+    "meow": "~9.0.0",
+    "neat-log": "~3.1.0",
+    "update-notifier": "~5.1.0"
+  },
+  "files": [
+    "bin"
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "license": "ISC"
+}
