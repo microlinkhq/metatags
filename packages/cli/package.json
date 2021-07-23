@@ -1,5 +1,5 @@
 {
-  "name": "metatags",
+  "name": "@metatags/cli",
   "description": "Ensure your HTML is previewed beauty across social networks.",
   "homepage": "https://github.com/microlinkhq/metatags#readme",
   "version": "0.1.0",
