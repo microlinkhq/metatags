@@ -11,12 +11,12 @@ const _getBrowserless = require('./get-browserless')
 const getUrls = require('./get-urls')
 const allRules = require('./rules')
 
-const evaluateRule = async ({ value, validator }) => {
+const evaluateRule = async ({ value, validator, el }) => {
   let status = 'success'
   let message
 
   try {
-    await validator(value)
+    await validator({ value, el })
   } catch (error) {
     status = error.name === 'RangeError' ? 'warning' : 'error'
     message = error.message
@@ -36,7 +36,7 @@ const validate = async (html, emitter) => {
         const el = $(`head ${selector}`)
         const value = (attr ? el.attr(attr) : el.text()) || ''
 
-        const result = await evaluateRule({ ...rule, value })
+        const result = await evaluateRule({ ...rule, value, el })
         const evaluatedRule = { ...rule, ...result, value }
 
         emitter.emit('rule', evaluatedRule)

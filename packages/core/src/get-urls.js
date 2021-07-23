@@ -9,7 +9,7 @@ module.exports = async (urls, opts) => {
   const collection = [...new Set([].concat(urls))]
 
   const iterator = async (set, url) => {
-    const urls = isXmlUrl(url) ? fromXML(url, opts) : [url]
+    const urls = isXmlUrl(url) ? await fromXML(url, opts) : [url]
     return new Set([...set, ...urls])
   }
 

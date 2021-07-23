@@ -1,21 +1,21 @@
 'use strict'
 
 const spinner = require('ora')({ text: '', color: 'gray' })
-const { green, yellow, red, blue, gray } = require('chalk')
 const indentString = require('indent-string')
 const humanizeUrl = require('humanize-url')
 const logSymbols = require('log-symbols')
 const prettyMs = require('pretty-ms')
 const { EOL } = require('os')
 
-const COLOR = { success: green, warning: yellow, error: red }
+const color = require('../color')
+const { pink, gray } = color
 
 const renderProgress = ({ fetchingUrl, count, total, startTimestamp }) => {
-  const timestamp = blue(prettyMs(Date.now() - startTimestamp))
+  const timestamp = pink(prettyMs(Date.now() - startTimestamp))
   const spinnerFrame = spinner.frame()
   const url = gray(fetchingUrl)
   const progress = total ? gray(`${count} of ${total}`) : ''
-  return `${EOL}${timestamp} ${spinnerFrame}${progress} ${url}`
+  return `${EOL}${timestamp} ${spinnerFrame}${progress} ${url}${EOL}`
 }
 
 const renderResume = state => {
@@ -24,11 +24,16 @@ const renderResume = state => {
     let str = `${humanizeUrl(url)}${EOL}`
     Object.keys(allRules).forEach(ruleName => {
       const rules = allRules[ruleName]
-      str += indentString(`${ruleName}${EOL}`, 2)
+      str += `${EOL}${indentString(`${ruleName}`, 2)}${EOL}${EOL}`
       rules.forEach(rule => {
-        const colorize = COLOR[rule.status]
-        const info = rule.message ? `${EOL}${indentString(`- ${rule.message}`, 2)}` : ''
-        str += colorize(indentString(`${logSymbols[rule.status]} ${rule.selector} ${info}`, 4))
+        const colorize = color[rule.status]
+        const info = rule.message ? `${EOL}${indentString(`- ${rule.message}`, 2)}${EOL}` : EOL
+        str += indentString(
+          `${colorize(logSymbols[rule.status])} ${colorize(rule.selector)} ${gray(
+            rule.value
+          )} ${colorize(info)}`,
+          4
+        )
         str += EOL
       })
     })
