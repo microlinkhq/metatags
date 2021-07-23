@@ -4,9 +4,9 @@
   "homepage": "https://metatags.co",
   "version": "0.0.0",
   "author": {
-    "email": "josefrancisco.verdu@gmail.com",
-    "name": "Kiko Beats",
-    "url": "https://kikobeats.com"
+    "email": "hello@microlink.io",
+    "name": "microlink.io",
+    "url": "https://microlink.io"
   },
   "devDependencies": {
     "@commitlint/cli": "latest",
@@ -58,5 +58,8 @@
   "simple-git-hooks": {
     "commit-msg": "npx commitlint --edit",
     "pre-commit": "npx lint-staged"
-  }
+  },
+  "contributors": [
+    "Kiko Beats <josefrancisco.verdu@gmail.com>"
+  ]
 }

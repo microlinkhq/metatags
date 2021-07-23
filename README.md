@@ -6,10 +6,31 @@
 </h1>
 
 ![Last version](https://img.shields.io/github/tag/microlinkhq/metatags.svg?style=flat-square)
-[![Coverage Status](https://img.shields.io/coveralls/microlinkhq/metatags.svg?style=flat-square)](https://coveralls.io/github/microlinkhq/metatags)
 [![NPM Status](https://img.shields.io/npm/dm/metatags.svg?style=flat-square)](https://www.npmjs.org/package/metatags)
 
 > Ensure your HTML is previewed beautifully across social networks.
+
+With **metatags** you can be sure your content will be well defined and it will look beautiful on Google, Facebook, Twitter, and more.
+
+## Usage
+
+**Passing a URL**
+
+```
+npx @metatags/cli https://microlink.io
+```
+
+**Passing multiple URLs**
+
+```
+npx @metatags/cli https://microlink.io https://microlink.io/blog
+```
+
+**Providing a sitemap**
+
+```
+npx @metatags/cli https://microlink.io/sitemap.xml
+```
 
 ## License
 
