@@ -1,12 +1,12 @@
 'use strict'
 
-const { name, description } = require('../../../../package.json')
+const { description } = require('../../package.json')
 const { pink, gray } = require('../color')
 
 module.exports = gray(`${gray(description)}.
 
   Usage
-    $ ${pink(name)} <url> [<flags>]
+    $ ${pink('metatags')} <url> [<flags>]
 
   Flags
     -c, --concurrence     Number of concurrent petitions (defaults to 8).
