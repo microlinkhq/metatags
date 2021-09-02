@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.1.4](https://github.com/microlinkhq/metatags/compare/v0.1.3...v0.1.4) (2021-09-02)
+
+
+### Bug Fixes
+
+* add missing dependencies ([63b4468](https://github.com/microlinkhq/metatags/commit/63b4468640f380a61f80f4370d7a5252e7b95714))
+
+
+
+
+
 ## [0.1.3](https://github.com/microlinkhq/metatags/compare/v0.1.2...v0.1.3) (2021-09-02)
 
 
