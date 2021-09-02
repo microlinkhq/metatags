@@ -43,5 +43,8 @@
   "scripts": {
     "test": "exit 0"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  }
 }
