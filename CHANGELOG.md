@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.1.6](https://github.com/microlinkhq/metatags/compare/v0.1.5...v0.1.6) (2021-09-02)
+
+
+### Bug Fixes
+
+* filepath ([ae8ae83](https://github.com/microlinkhq/metatags/commit/ae8ae83ade4a6705b9657f127fe5d2244ae9ef28))
+
+
+
+
+
 ## [0.1.5](https://github.com/microlinkhq/metatags/compare/v0.1.4...v0.1.5) (2021-09-02)
 
 

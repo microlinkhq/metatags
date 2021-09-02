@@ -2,7 +2,7 @@
   "name": "@metatags/cli",
   "description": "Ensure your HTML is previewed beautifully across social networks",
   "homepage": "https://github.com/microlinkhq/metatags#readme",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "main": "bin/cli/index.js",
   "bin": {
     "metatags": "bin/cli/index.js"
