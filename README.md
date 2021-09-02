@@ -1,6 +1,6 @@
 <h1 align="center">
   <br>
-  <img style="width: 350px; margin:3rem 0 1.5rem;" src="/static/banner.png" alt="metatags">
+  <img style="width: 500px; margin:3rem 0 1.5rem;" src="/static/banner.png" alt="metatags">
   <br>
   <br>
 </h1>
