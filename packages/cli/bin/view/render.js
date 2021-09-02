@@ -2,7 +2,6 @@
 
 const spinner = require('ora')({ text: '', color: 'gray' })
 const indentString = require('indent-string')
-const humanizeUrl = require('humanize-url')
 const httpStatus = require('http-status')
 const logSymbols = require('log-symbols')
 const prettyMs = require('pretty-ms')
@@ -24,7 +23,7 @@ const renderResume = state => {
     const allRules = state.data[url]
     const statusCode = state.status[url]
     const humanStatusCode = gray(`${statusCode} ${httpStatus[statusCode]}`)
-    let str = `${humanizeUrl(url)} ${humanStatusCode} ${EOL}`
+    let str = `${url} ${humanStatusCode} ${EOL}`
     Object.keys(allRules).forEach(ruleName => {
       const rules = allRules[ruleName]
       str += `${EOL}${indentString(`${ruleName}`, 2)}${EOL}${EOL}`
