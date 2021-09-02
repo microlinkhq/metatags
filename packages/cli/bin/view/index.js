@@ -8,6 +8,7 @@ const render = require('./render')
 
 module.exports = ({ total, emitter, logspeed, ...opts }) => {
   const state = {
+    status: {},
     count: 0,
     end: false,
     fetchingUrl: '',
@@ -25,6 +26,10 @@ module.exports = ({ total, emitter, logspeed, ...opts }) => {
     emitter.on('fetching', data => {
       state.fetchingUrl = data.url
       ++state.count
+    })
+
+    emitter.on('fetched', ({ targetUrl, statusCode }) => {
+      state.status[targetUrl] = statusCode
     })
 
     emitter.on('rule', ({ status }) => {

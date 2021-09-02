@@ -50,9 +50,10 @@ const validate = async (html, emitter) => {
 
 const validateUrl = async ({ acc, url, emitter, ...opts }) => {
   emitter.emit('fetching', { url })
-  const { html } = await getHTML(url, opts)
+  const data = await getHTML(url, opts)
+  emitter.emit('fetched', { ...data, targetUrl: url })
 
-  const report = await validate(html, emitter)
+  const report = await validate(data.html, emitter)
   emitter.emit('report', report)
 
   acc[url] = report
