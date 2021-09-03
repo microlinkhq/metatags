@@ -10,28 +10,28 @@
 
 > Ensure your HTML is previewed beautifully across social networks.
 
-With **metatags** you can be sure your content will be well defined and it will look beautiful on Google, Facebook, Twitter, and more.
-
 ![](/static/demo.png)
+
+With **metatags** you can be sure your content will be well defined and it will look beautiful on Google, Facebook, Twitter, and more.
 
 ## Usage
 
 **Passing a URL**
 
 ```
-npx @metatags/cli https://microlink.io
+npx metatags https://microlink.io
 ```
 
 **Passing multiple URLs**
 
 ```
-npx @metatags/cli https://microlink.io https://microlink.io/blog
+npx metatags https://microlink.io https://microlink.io/blog
 ```
 
 **Providing a sitemap**
 
 ```
-npx @metatags/cli https://microlink.io/sitemap.xml
+npx metatags https://microlink.io/sitemap.xml
 ```
 
 ## License
