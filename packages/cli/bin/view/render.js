@@ -2,6 +2,8 @@
 
 const spinner = require('ora')({ text: '', color: 'gray' })
 const indentString = require('indent-string')
+const cliTruncate = require('cli-truncate')
+const terminalSize = require('term-size')
 const httpStatus = require('http-status')
 const logSymbols = require('log-symbols')
 const prettyMs = require('pretty-ms')
@@ -9,6 +11,10 @@ const { EOL } = require('os')
 
 const color = require('../color')
 const { pink, gray } = color
+
+const { columns } = terminalSize()
+
+const truncateText = text => (text.length + 50 < columns ? text : cliTruncate(text, columns - 50))
 
 const renderProgress = ({ fetchingUrl, count, total, startTimestamp }) => {
   const timestamp = pink(prettyMs(Date.now() - startTimestamp))
@@ -26,14 +32,16 @@ const renderResume = state => {
     let str = `${url} ${humanStatusCode} ${EOL}`
     Object.keys(allRules).forEach(ruleName => {
       const rules = allRules[ruleName]
-      str += `${EOL}${indentString(`${ruleName}`, 2)}${EOL}${EOL}`
+      str += `${EOL}${indentString(`${ruleName}`, 2)}${EOL}`
+
       rules.forEach(rule => {
         const colorize = color[rule.status]
-        const info = rule.message ? `${EOL}${indentString(`- ${rule.message}`, 2)}${EOL}` : EOL
+        const value = truncateText(rule.value)
+        const info = rule.message ? `${EOL}${indentString(`- ${rule.message}`, 2)}` : ''
         str += indentString(
           `${colorize(logSymbols[rule.status])} ${colorize(rule.selector)} ${gray(
-            rule.value
-          )} ${colorize(info)}`,
+            `(${rule.value.length})`
+          )} ${gray(value)} ${colorize(info)}`,
           4
         )
         str += EOL

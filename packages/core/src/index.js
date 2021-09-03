@@ -18,7 +18,7 @@ const evaluateRule = async ({ value, validator, el }) => {
   try {
     await validator({ value, el })
   } catch (error) {
-    status = error.name === 'RangeError' ? 'warning' : 'error'
+    status = error.status
     message = error.message
   }
 

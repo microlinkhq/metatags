@@ -1,58 +1,6 @@
 'use strict'
 
-const isUrl = require('is-url-http/lightweight')
-const reachableUrl = require('reachable-url')
-
-const inRange = (num, init, final) => num >= Math.min(init, final) && num < Math.max(init, final)
-
-// https://moz.com/learn/seo/title-tag
-const VALIDATOR = {
-  url: async ({ value }) => {
-    if (value.toString().length === 0) {
-      throw new TypeError('Expected to be present')
-    }
-
-    if (!isUrl(value)) {
-      throw new TypeError(`Expected an absolute WHATWG URL, got \`${value}\``)
-    }
-
-    const res = await reachableUrl(value)
-
-    if (!reachableUrl.isReachable(res)) {
-      throw new TypeError(`Expected a reachable URL, got ${res.statusCode} HTTP status code`)
-    }
-  },
-  notEmpty: ({ value }) => {
-    if (value.toString().length === 0) {
-      throw new TypeError('Expected to be not empty')
-    }
-  },
-  presence: ({ el }) => {
-    if (el.length === 0) {
-      throw new TypeError('Expected to be present')
-    }
-  },
-  title: ({ value }) => {
-    if (value.toString().length === 0) {
-      throw new TypeError('Expected to be present')
-    }
-
-    if (!inRange(value.toString().length, 50, 60)) {
-      throw new RangeError(`Expected a value between 50 and 60 maximum length, got ${value.length}`)
-    }
-  },
-  description: ({ value }) => {
-    if (value.toString().length === 0) {
-      throw new TypeError('Expected to be present')
-    }
-
-    if (!inRange(value.toString().length, 50, 160)) {
-      throw new RangeError(
-        `Expected a value between 50 and 160 maximum length, got ${value.length}`
-      )
-    }
-  }
-}
+const VALIDATOR = require('./validators')
 
 module.exports = {
   // Search Engine
@@ -70,6 +18,7 @@ module.exports = {
     },
     {
       selector: 'meta[charset]',
+      attr: 'charset',
       validator: VALIDATOR.presence
     },
     {
@@ -85,7 +34,7 @@ module.exports = {
     { selector: 'meta[itemprop="name"]', attr: 'content', validator: VALIDATOR.title },
     {
       selector: '[itemprop*="author" i] [itemprop="name"], [itemprop*="author" i]',
-      validator: VALIDATOR.presence
+      validator: VALIDATOR.notEmpty
     },
     {
       selector: 'meta[itemprop="description"]',

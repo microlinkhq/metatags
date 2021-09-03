@@ -35,6 +35,7 @@
     "reachable-url": "~1.6.0",
     "require-one-of": "~1.0.15",
     "signal-exit": "~3.0.3",
+    "whoops": "~4.1.0",
     "xml-urls": "~2.1.25"
   },
   "files": [
