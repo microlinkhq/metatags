@@ -12,6 +12,8 @@
 
 With **metatags** you can be sure your content will be well defined and it will look beautiful on Google, Facebook, Twitter, and more.
 
+![](/static/demo.png)
+
 ## Usage
 
 **Passing a URL**
