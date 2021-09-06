@@ -35,7 +35,7 @@
     "beauty-error": "~1.2.8",
     "chalk": "~4.1.1",
     "ci-env": "~1.16.0",
-    "cli-truncate": "~2.1.0",
+    "cli-truncate": "~3.0.0",
     "cosmiconfig": "~7.0.0",
     "github-build": "~1.2.2",
     "http-status": "~1.5.0",
