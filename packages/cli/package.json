@@ -34,7 +34,7 @@
     "@metatags/core": "^1.0.0",
     "beauty-error": "~1.2.8",
     "chalk": "~4.1.1",
-    "ci-env": "~1.16.0",
+    "ci-env": "~1.17.0",
     "cli-truncate": "~2.1.0",
     "cosmiconfig": "~7.0.0",
     "github-build": "~1.2.2",
