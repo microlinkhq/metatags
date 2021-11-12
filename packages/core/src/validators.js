@@ -1,7 +1,7 @@
 'use strict'
 
-const isUrl = require('is-url-http/lightweight')
 const reachableUrl = require('reachable-url')
+const isUrl = require('is-url-http')
 const whoops = require('whoops')
 
 const inRange = (num, init, final) => num >= Math.min(init, final) && num < Math.max(init, final)
