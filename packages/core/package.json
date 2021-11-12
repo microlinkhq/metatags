@@ -2,7 +2,7 @@
   "name": "@metatags/core",
   "description": "Ensure your HTML is previewed beauty across social networks.",
   "homepage": "https://github.com/microlinkhq/metatags#readme",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "src/index.js",
   "repository": {
     "directory": "packages/core",
