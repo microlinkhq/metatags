@@ -2,13 +2,22 @@
 
 'use strict'
 
-const { cosmiconfig: createCosmiconfig } = require('cosmiconfig')
 const { omit, isEmpty } = require('lodash')
 const beautyError = require('beauty-error')
+const JoyCon = require('joycon')
 
 const pkg = require('../../package.json')
 
-const cosmiconfig = createCosmiconfig(pkg.name)
+const joycon = new JoyCon({
+  packageKey: pkg.name,
+  files: [
+    'package.json',
+    `.${pkg.name}rc`,
+    `.${pkg.name}rc.json`,
+    `.${pkg.name}rc.js`,
+    `${pkg.name}.config.js`
+  ]
+})
 
 const metatags = require('@metatags/core')
 
@@ -54,7 +63,7 @@ const cli = require('meow')(require('./help'), {
 })
 
 const main = async () => {
-  const { config = {} } = (await cosmiconfig.search()) || {}
+  const { data: config } = await joycon.load()
   const input = config.url || cli.input
 
   if (isEmpty(input)) {
