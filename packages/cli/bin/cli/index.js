@@ -63,7 +63,7 @@ const cli = require('meow')(require('./help'), {
 })
 
 const main = async () => {
-  const { data: config } = await joycon.load()
+  const { data: config = {} } = (await joycon.load()) || {}
   const input = config.url || cli.input
 
   if (isEmpty(input)) {
