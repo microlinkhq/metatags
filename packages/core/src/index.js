@@ -42,7 +42,9 @@ const validate = async (html, emitter) => {
         emitter.emit('rule', evaluatedRule)
         return evaluatedRule
       })
-      return { ...acc, [rulesName]: evaluatedRules }
+
+      acc[rulesName] = evaluatedRules
+      return acc
     },
     {}
   )
