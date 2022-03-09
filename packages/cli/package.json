@@ -33,7 +33,7 @@
   "dependencies": {
     "@metatags/core": "^1.0.1",
     "beauty-error": "~1.2.8",
-    "chalk": "~4.1.1",
+    "chalk": "~5.0.1",
     "ci-env": "~1.17.0",
     "cli-truncate": "~2.1.0",
     "github-build": "~1.2.2",
