@@ -36,7 +36,7 @@ npx metatags https://microlink.io/sitemap.xml
 
 ## License
 
-**metatags** © [Microlink](https://microlink.io), Released under the [MIT](https://github.com/microlinkhq/metatags/blob/master/LICENSE.md) License.<br>
+**metatags** © [Microlink](https://microlink.io), released under the [MIT](https://github.com/microlinkhq/metatags/blob/master/LICENSE.md) License.<br>
 Authored and maintained by [Microlink](https://microlink.io) with help from [contributors](https://github.com/microlinkhq/metatags/contributors).
 
-> [microlink.io](https://microlink.io) · GitHub [@microlink.io](https://github.com/microlinkhq) · Twitter [@microlinkhq](https://twitter.com/microlinkhq)
+> [microlink.io](https://microlink.io) · GitHub [microlinkhq](https://github.com/microlinkhq) · Twitter [@microlinkhq](https://twitter.com/microlinkhq)

@@ -19,7 +19,7 @@
     "@commitlint/config-conventional": "latest",
     "finepack": "latest",
     "git-authors-cli": "latest",
-    "lerna": "latest",
+    "@lerna-lite/cli": "latest",
     "nano-staged": "latest",
     "npm-check-updates": "latest",
     "nyc": "latest",
