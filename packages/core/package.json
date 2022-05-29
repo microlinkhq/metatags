@@ -28,7 +28,7 @@
   ],
   "dependencies": {
     "aigle": "~1.14.1",
-    "cheerio": "~1.0.0-rc.10",
+    "cheerio": "~1.0.0-rc.11",
     "html-get": "~2.9.0",
     "is-url-http": "~2.3.0",
     "mitt": "~3.0.0",
