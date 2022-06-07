@@ -46,7 +46,7 @@
     "neat-log": "~3.1.0",
     "ora": "~5.0.0",
     "prepend-http": "~3.0.1",
-    "pretty-ms": "~7.0.1",
+    "pretty-ms": "~8.0.0",
     "term-size": "~2.2.1",
     "update-notifier": "~5.1.0"
   },
