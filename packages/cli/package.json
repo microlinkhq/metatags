@@ -48,7 +48,7 @@
     "prepend-http": "~3.0.1",
     "pretty-ms": "~7.0.1",
     "term-size": "~2.2.1",
-    "update-notifier": "~5.1.0"
+    "update-notifier": "~6.0.2"
   },
   "files": [
     "bin"
