@@ -3,7 +3,7 @@
 const creatBrowserlessFactory = opts => {
   const requireOneOf = require('require-one-of')
   const createBrowserless = requireOneOf(['@browserless/pool', 'browserless'])
-  const onExit = require('signal-exit')
+  const { onExit } = require('signal-exit')
 
   const browserlessFactory = createBrowserless(opts)
   onExit(browserlessFactory.close)
