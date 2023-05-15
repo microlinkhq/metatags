@@ -4,9 +4,10 @@ const spinner = require('ora')({ text: '', color: 'gray' })
 const indentString = require('indent-string')
 const cliTruncate = require('cli-truncate')
 const terminalSize = require('term-size')
-const httpStatus = require('http-status')
 const logSymbols = require('log-symbols')
 const prettyMs = require('pretty-ms')
+
+const { STATUS_CODE } = require('http')
 const { EOL } = require('os')
 
 const color = require('../color')
@@ -28,7 +29,7 @@ const renderResume = state => {
   return Object.keys(state.data).reduce((acc, url) => {
     const allRules = state.data[url]
     const statusCode = state.status[url]
-    const humanStatusCode = gray(`${statusCode} ${httpStatus[statusCode]}`)
+    const humanStatusCode = gray(`${statusCode} ${STATUS_CODE[statusCode]}`)
     let str = `${url} ${humanStatusCode} ${EOL}`
     Object.keys(allRules).forEach(ruleName => {
       const rules = allRules[ruleName]
