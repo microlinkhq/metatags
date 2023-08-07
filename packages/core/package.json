@@ -29,7 +29,7 @@
   "dependencies": {
     "aigle": "~1.14.1",
     "cheerio": "~1.0.0-rc.11",
-    "html-get": "~2.11.0",
+    "html-get": "~2.13.0",
     "is-url-http": "~2.3.0",
     "mitt": "~3.0.0",
     "reachable-url": "~1.7.0",
